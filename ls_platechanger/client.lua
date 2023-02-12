@@ -110,9 +110,9 @@ end
 function createCam(vehicle)
     cam = CreateCam('DEFAULT_SCRIPTED_CAMERA', false) 
     SetCamFov(cam, GetCamFov(cam)-35.0)
-	SetCamActive(cam, true)
-	RenderScriptCams(true, true, 1000, true, true)
-    AttachCamToVehicleBone(cam, vehicle, GetEntityBoneIndexByName(vehicle, 'platelight'), true, 0.0, 0.0, 0.0, 0.0, -1.0, -0.1, true)
+    SetCamActive(cam, true)
+    RenderScriptCams(true, true, 1000, true, true)
+    AttachCamToVehicleBone(cam, vehicle, GetEntityBoneIndexByName(vehicle, 'chassis_dummy'), true, 0.0, 0.0, 0.0, 0.0, -5.0, -0.1, true)
 end
 
 function deleteCam()
