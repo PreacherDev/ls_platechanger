@@ -9,7 +9,7 @@ RegisterNetEvent('ls_platechanger:server:checkPlate', function(newPlate, oldPlat
             local vehicleProps = json.decode(query[1].vehicle)
             vehicleProps.plate = newPlate
             vehicleProps = json.encode(vehicleProps)
-            MySQL.update('UPDATE owned_vehicles SET plate = ?, vehicle = ?', {newPlate, vehicleProps})
+            MySQL.update('UPDATE owned_vehicles SET plate = ?, vehicle = ? WHERE plate =  ?', {newPlate, vehicleProps, oldPlate})
             xPlayer.removeInventoryItem(Config.Itemname, 1)
         end
     else 
