@@ -122,3 +122,14 @@ function deleteCam()
         DestroyCam(cam)
     end
 end
+
+CreateThread(function()
+    while true do 
+        local time = 350
+        if IsPedSittingInAnyVehicle(PlayerPedId()) and changing then 
+            ESX.ShowHelpNotification('~INPUT_CELLPHONE_UP~ ~INPUT_CELLPHONE_DOWN~ ~s~Previous/Next Character~s~\n~INPUT_CELLPHONE_LEFT~ ~INPUT_CELLPHONE_RIGHT~ ~s~Previous/Next Digit~s~\n~INPUT_FRONTEND_RRIGHT~ ~r~Cancel~s~\n~INPUT_CELLPHONE_SELECT~ ~g~Confirm~s~')
+            time = 1
+        end
+        Wait(time)
+    end
+end)
